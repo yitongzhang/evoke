@@ -1,4 +1,4 @@
-/* Typography
+/* Typograph`y
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*font-family: 'Karla', sans-serif;
 font-family: 'Merriweather', serif;
@@ -38,8 +38,6 @@ a:hover {color: #106CD6;}
 /* General
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 body{
-	max-width: 1200px;
-	width: 90%;
 	margin: 0 auto;
 	background-color: #F5FAF9;
 }
@@ -72,12 +70,37 @@ a, input{
 	-webkit-transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s, bottom 0.2s, right 0.2s, opacity 0.2s, background 0.2s, color 0.2s, display 0.2s, border-bottom 0.2s, padding-top 0.2s, padding-bottom 0.2s,margin-top 0.2s,margin-bottom 0.2s;
 	transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s, bottom 0.2s, right 0.2s, opacity 0.2s, background 0.2s, color 0.2s, display 0.2s, border-bottom 0.2s, padding-top 0.2s, padding-bottom 0.2s,margin-top 0.2s,margin-bottom 0.2s;
 }
+.section_outside{
+	position: relative;
+}
+.section_outside>img{
+	position: absolute;
+	width: 80px;
+	top: 25%;
+}
+
+.section_outside.left{
+	padding-left:8%;
+}
+.section_outside.left img{
+	left: calc(8% - 80px);
+}
+.section_outside.right{
+	padding-right:8%;
+}
+.section_outside.right img{
+	right: calc(8% - 80px);
+}
+
 
 /* Nav and header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 header{
-	margin-top: 80px;
-	margin-bottom: 40px;
+	padding-top: 80px;
+	padding-bottom: 40px;
+	max-width: 1200px;
+	width: 84%;
+	margin:0 auto;
 }
 header:after {
   content: "";
@@ -89,7 +112,7 @@ header form{
 	margin-bottom: 24px;
 }
 #logo{
-	height: 24px;
+	height: 32px;
 	width: 100px;
 }
 
@@ -123,20 +146,27 @@ nav{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	max-width: 1200px;
+	width: 84%;
+	margin: 0 auto;
 }
 
 
 /* Main
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+main{
+	margin-bottom: 64px;
+}
 section{
 	background-color: white;
 	padding: 24px 64px;
 	margin-top: 128px;
 	box-shadow: 8px 8px 60px rgba(196,212,229,0.2);
-	border-radius: 16px;
+	border-radius: 0px 16px 16px 0px;
 }
-section:first-child{
+.section_outside:first-child section{
 	margin-top: 0px;
+	border-radius: 16px 0px 0px 16px;
 }
 
 .line{
@@ -201,6 +231,9 @@ article.right-text{
 footer{
 	margin-top: 128px;
 	margin-bottom: 64px;
+	width: 84%;
+
+	margin: 0 auto;
 }
 
 footer .cta{
@@ -283,8 +316,11 @@ footer .persona img{
 	section{
 		padding: 2px 20px;
 		border-radius: 8px;
-		margin-top: 24px;
+		margin-top: 0px;
+		border-radius: 0px !important;
+		box-shadow: 8px 8px 60px rgba(196,212,229,0);
 	}
+
 	article.left-text, article.right-text{
 		flex-direction: column;
 		align-items: center;
@@ -300,21 +336,30 @@ footer .persona img{
 		left: -10%;
 		width: 44%;
 	}
-
+	.section_outside>img{
+		display: none;
+	}
+	.section_outside.left, .section_outside.right{
+		padding: 0;
+	}
 
 	.illustration-medium,.illustration-small{
 		width: 80%;
 		margin-top: 24px;
 		margin-bottom: 24px;
 	}
-
-	footer{
-		margin-top: 24px;
+	main{
 		margin-bottom: 0;
 	}
+	footer{
+		width:100%;
+		margin-bottom: 0;
+		background-color: #3A7BFF;
+	}
 	footer .cta{
-		border-radius: 8px;
-		padding: 48px 20px 88px 20px;
+		border-radius: 0px;
+		padding: 48px 32px 88px 32px;
+		box-shadow:8px 8px 60px rgba(196,212,229,0);
 	}
 	footer .illustration-footer{
 		top: -64px;
@@ -335,7 +380,7 @@ footer .persona img{
 @media (max-width: 1200px ) and (min-width: 661px)  {
 	header h1{
 		font-size: 3.4rem;
-		max-width: 400px;
+		max-width: 340px;
 	}
 	h2{font-size: 1.8rem;}
 	p{
